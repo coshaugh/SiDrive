@@ -8,7 +8,7 @@ using Microsoft.Extensions.Logging.Abstractions;
 
 namespace Listeners
 {
-    public sealed class DirectoryManager
+    public sealed class FileSystemListener
     {
         private ILogger _logger;
 
@@ -19,7 +19,7 @@ namespace Listeners
         private Dictionary<string, FileMeta> _fileMetaList;
         private List<FileSystemWatcher> _fileSystemWatchers = new List<FileSystemWatcher>();
 
-        public DirectoryManager(string rawPath, ILogger logger = null)
+        public FileSystemListener(string rawPath, ILogger logger = null)
         {
             _directory = CleanPath(rawPath);
             _fileMetaList = Directory.GetFiles(_directory)

@@ -3,7 +3,7 @@ using Microsoft.Extensions.Logging.Abstractions;
 
 using Data;
 
-namespace Listeners.Parsers
+namespace Parsers
 {
     public abstract class Parser
     {

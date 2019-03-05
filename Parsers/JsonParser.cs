@@ -3,7 +3,7 @@ using System.IO;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
-namespace Listeners.Parsers
+namespace Parsers
 {
     public sealed class JsonParser : Parser
     {

@@ -3,7 +3,7 @@ using Data;
 using Microsoft.Extensions.Logging;
 using YamlDotNet.Serialization;
 
-namespace Listeners.Parsers
+namespace Parsers
 {
     public sealed class YamlParser : Parser
     {

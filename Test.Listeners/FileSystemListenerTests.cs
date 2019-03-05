@@ -7,7 +7,7 @@ using Listeners;
 
 namespace Test.Interpreters
 {
-    public class DirectoryManagerTests
+    public class FileSystemListenerTests
     {
         public static string testFile = "testFile";
 
@@ -27,7 +27,7 @@ namespace Test.Interpreters
             var sandboxDir = SetupSandbox();
 
             // 1) create instance of directory monitor
-            var dm = new DirectoryManager(sandboxDir);
+            var dm = new FileSystemListener(sandboxDir);
             dm.Listen();
 
             // 2) make some changes in the directory
@@ -46,7 +46,7 @@ namespace Test.Interpreters
             var newFiles = CreateFile(sandboxDir, testFile, extension, 3);
 
             // 1) create instance of directory monitor
-            var dm = new DirectoryManager(sandboxDir);
+            var dm = new FileSystemListener(sandboxDir);
             dm.Listen();
 
             // 2) make some changes in the directory
