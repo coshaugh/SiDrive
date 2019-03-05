@@ -6,18 +6,15 @@ namespace Scribes
 {
     public class Comment
     {
-        private readonly string topCommentBlock = "/******************************************************************************";
-        private string keyValueContentCommentBlock(string key, string value) => $"* {key}\t\t : {value}";
-        private string simpleContentCommentBlock(string content) => $"* {content}";
-        private readonly string bottomCommentBlock = "*******************************************************************************/";
+        private readonly string openingBlock = "/******************************************************************************";
+        private string keyValueBlock(string key, string value) => $"* {key}\t\t : {value}";
+        private readonly string closingBlock = "*******************************************************************************/";
         
-        private string inlineComment(string content) => $"// {content}";
-
         public Comment()
         {
         }
 
-        public string FunctionCommentBlock(
+        public string FunctionBlock(
             string functionName,
             string description,
             IEnumerable<string> inputs,
@@ -25,16 +22,16 @@ namespace Scribes
             string returnValue)
         {
             var strBldr = new StringBuilder();
-            strBldr.Append(keyValueContentCommentBlock("Function Name",functionName));
-            strBldr.Append(keyValueContentCommentBlock("Description",description));
-            strBldr.Append(keyValueContentCommentBlock("Input", string.Join(", ",inputs)));
-            strBldr.Append(keyValueContentCommentBlock("Output",output));
-            strBldr.Append(keyValueContentCommentBlock("Return",returnValue));
+            strBldr.Append(keyValueBlock("Function Name",functionName));
+            strBldr.Append(keyValueBlock("Description",description));
+            strBldr.Append(keyValueBlock("Input", string.Join(", ",inputs)));
+            strBldr.Append(keyValueBlock("Output",output));
+            strBldr.Append(keyValueBlock("Return",returnValue));
             
             return WrapBlock(strBldr.ToString());
         }
 
-        public string ProjectCommentBlock(
+        public string ProjectBlock(
             string projectName, 
             string fileName, 
             string version, 
@@ -44,13 +41,13 @@ namespace Scribes
             IEnumerable<string> other = null)
         {
             var strBldr = new StringBuilder();
-            strBldr.Append(keyValueContentCommentBlock("Project Name",projectName));
-            strBldr.Append(keyValueContentCommentBlock("File Name",fileName));
-            strBldr.Append(keyValueContentCommentBlock("Version", version));
-            strBldr.Append(keyValueContentCommentBlock("Device Used",device));
-            strBldr.Append(keyValueContentCommentBlock("Software Used",software));
-            strBldr.Append(keyValueContentCommentBlock("Author",author));
-            //strBldr.Append(keyValueContentCommentBlock("Other",string.Join(", ",other)));
+            strBldr.Append(keyValueBlock("Project Name",projectName));
+            strBldr.Append(keyValueBlock("File Name",fileName));
+            strBldr.Append(keyValueBlock("Version", version));
+            strBldr.Append(keyValueBlock("Device Used",device));
+            strBldr.Append(keyValueBlock("Software Used",software));
+            strBldr.Append(keyValueBlock("Author",author));
+            //strBldr.Append(keyValueBlock("Other",string.Join(", ",other)));
             
             return WrapBlock(strBldr.ToString());
         }
@@ -58,9 +55,9 @@ namespace Scribes
         private string WrapBlock(string innerContent)
         {
             var strBldr = new StringBuilder();
-            strBldr.Append(topCommentBlock + "\n");
+            strBldr.Append(openingBlock + "\n");
             strBldr.Append(innerContent + "\n");
-            strBldr.Append(bottomCommentBlock + "\n");
+            strBldr.Append(closingBlock + "\n");
 
             return strBldr.ToString();
         }
