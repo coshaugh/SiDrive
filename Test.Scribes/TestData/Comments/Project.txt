@@ -1,0 +1,8 @@
+/******************************************************************************
+* Project Name		: Door Sensor
+* File Name			: LIS3DH.h
+* Version 			: 1.0
+* Device Used		: BLE Sensor Board (R&D version)
+* Software Used		: R&D Version
+* Author            : Shane Petcavich 
+*******************************************************************************/

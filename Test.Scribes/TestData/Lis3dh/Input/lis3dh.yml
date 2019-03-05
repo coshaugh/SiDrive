@@ -1,0 +1,80 @@
+---
+-
+#Part: LIS3DH
+#Datasheet URL: https://www.st.com/resource/en/datasheet/cd00274221.pdf
+#TODO:
+#   8/21 did first 3 registers
+#
+#
+#
+  #register address (hex)
+  0x0F:
+    #Name of Reg
+    Name: WHO_AM_I
+    #Can you read this register?
+    Read: 1
+    #Can you write this register?
+    Write: 0
+    #Default register value (hex)
+    Default: 0x33
+    #Register Description
+    Description: Device identification register
+    #Remarks? (i.e. reserved, dummy, etc...)
+    Remarks: ""
+    #Does this register have groups of bits that function together?
+    Groups: None
+    #Does the state of this register effect other registers functionality?
+    Register_Dependencies: None
+
+  #register address (hex)
+  0x1E:
+    #Name of Reg
+    Name: "CTRL_REG0"
+    #Can you read this register?
+    Read: 1
+    #Can you write this register?
+    Write: 1
+    #Default register value (hex)
+    Default: 0x10
+    #Register Description
+    Description: "Control Register 1"
+    #Remarks? (i.e. reserved, dummy, etc...)
+    Remarks: ""
+    #Does this register have groups of bits that function together?
+    Groups: None
+    #DOes the state of this register effect other registers?
+    Register_Dependencies: ""
+    D7:
+        Name: SDO_PU_DISC
+        Description: Disconnect SDO/SA0 pull-up
+        0: pull-up connected to SDO/SA0 pin
+        1: pull-up disconnected to SDO/SA0 pin
+
+  #register address (hex)
+  0x1F:
+    #Name of Reg
+    Name: TEMP_CFG_REG
+    #Can you read this register?
+    Read: 1
+    #Can you write this register?
+    Write: 1
+    #Default register value (hex)
+    Default: 0x00
+    #Register Description
+    Description: Temeprature sensor and ADC Enable/Disable
+    #Remarks? (i.e. reserved, dummy, etc...)
+    Remarks: ""
+    #Does this register have groups of bits that function together?
+    Groups: None
+    #DOes the state of this register effect other registers?
+    Register_Dependencies: None
+    D7:
+        Name: ADC_EN
+        Description: Temperature sensor
+        0: Disabled
+        1: Enabled
+    D6:
+        Name: TEMP_EN
+        Description: ADC enable
+        0: Disabled
+        1: Enabled

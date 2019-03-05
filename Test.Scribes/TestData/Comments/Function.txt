@@ -1,0 +1,8 @@
+/*******************************************************************************
+* Function Name		: LIS3DH_ReadReg
+* Description		: Generic Reading function. It must be fullfilled with either
+*			: I2C or SPI reading functions					
+* Input			: Register Address
+* Output		: Data REad
+* Return		: None
+*******************************************************************************/
