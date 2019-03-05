@@ -45,7 +45,7 @@ namespace Listeners
             loggerFactory.AddProvider(new NLogLoggerProvider());
 
             var logger = loggerFactory.CreateLogger<Program>();
-            var dirManager = new DirectoryManager(userInputDirectoryPath, logger);
+            var dirManager = new FileSystemListener(userInputDirectoryPath, logger);
 
             dirManager.Listen();
             // do wtvr you need to here
