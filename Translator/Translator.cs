@@ -2,7 +2,7 @@ using System.IO;
 
 namespace Translator
 {
-    public class Translator
+    public class Translator : ITranslator
     {
         private Stream inputStream;
 
