@@ -1,3 +1,5 @@
+using System.IO;
+
 namespace Translator
 {
     public interface ITranslator
