@@ -15,7 +15,4 @@
   <ItemGroup>
     <Compile Remove="ApplicationLogger.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Data\Data.csproj" />
-  </ItemGroup>
 </Project>
