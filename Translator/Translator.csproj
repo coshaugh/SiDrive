@@ -10,4 +10,8 @@
     <PackageReference Include="YamlDotNet" Version="5.4.1-pre0530" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Scribes\Scribes.csproj" />
+  </ItemGroup>
+
 </Project>
