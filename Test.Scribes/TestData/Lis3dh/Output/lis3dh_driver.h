@@ -1,16 +1,11 @@
 /******************************************************************************
-* Project Name		: Door Sensor
-* File Name			: LIS3DH.h
-* Version 			: 1.0
-* Device Used		: BLE Sensor Board (R&D version)
+* Project Name    : Door Sensor
+* File Name       : lis3dh.h
+* Version 			  : 1.0
+* Device Used		  : BLE Sensor Board (R&D version)
 * Software Used		: R&D Version
-* Author            : Shane Petcavich 
+* Author          : Shane Petcavich 
 *******************************************************************************/
-
-#include "project.h"
-
-/* LIS3DH i2c Address */
-#define LIS3DH_I2C_ADDR                          (0x18)
 
 /* REGISTERS */
 #define LIS3DH_TEMP_CFG_REG                      (0X1F)
@@ -47,7 +42,7 @@
 #define LIS3DH_REG_INT1_THS                      (0x32)
 #define LIS3DH_REG_INT1_DURATION                 (0x33)
 #define LIS3DH_REG_INT2_CFG                      (0x34)
-#define LIS3DH_REG_INT2_SRC				         (0x35)
+#define LIS3DH_REG_INT2_SRC                      (0x35)
 #define LIS3DH_REG_INT2_THS                      (0x36)
 #define LIS3DH_REG_INT2_DURATION                 (0x37)
 #define LIS3DH_REG_CLICK_CFG                     (0x38)
@@ -63,16 +58,7 @@
 #define LIS3DH_READ_SUCCESS 0
 #define LIS3DH_READ_ERROR   1
 
-/*data structure for x,y,z data*/
-typedef struct {
-  int16_t AXIS_X;
-  int16_t AXIS_Y;
-  int16_t AXIS_Z;
-} XYZ_struct;
-
 /*basic functions: read, write, setup, and read data*/
 uint8_t LIS3DH_ReadReg(uint8_t Reg, uint8_t* Data);
 uint8_t LIS3DH_WriteReg(uint8_t Reg, uint8_t Data);
 uint8_t LIS3DH_Setup();
-uint8_t LIS3DH_Read_XYZ(XYZ_struct* buf);
-/* [] END OF FILE */
