@@ -1,7 +1,7 @@
-const REG_0x0f = {
-  Name: "WHO_AM_I",
-  Address: 0x0f,
-  Description: "Device identification register",
+const REG_0x1F = {
+  Name: "TEMP_CFG_REG",
+  Address: 0x1f,
+  Description: "Temp sensor/ ADC enable",
   BitGroups: [
     {
       Bits: [
@@ -11,7 +11,7 @@ const REG_0x0f = {
       ],
       States: [
         {
-          Values: [1],
+          Values: [0],
         },
       ],
     },
@@ -23,7 +23,7 @@ const REG_0x0f = {
       ],
       States: [
         {
-          Values: [1],
+          Values: [0],
         },
       ],
     },
@@ -59,7 +59,7 @@ const REG_0x0f = {
       ],
       States: [
         {
-          Values: [1],
+          Values: [0],
         },
       ],
     },
@@ -71,31 +71,47 @@ const REG_0x0f = {
       ],
       States: [
         {
-          Values: [1],
+          Values: [0],
         },
       ],
     },
     {
       Bits: [
         {
+          Name: "TEMP_EN",
           Position: 6,
+          Default: 0,
         },
       ],
+      Description: "Temperature sensor",
       States: [
         {
           Values: [0],
+          Description: "disabled",
+        },
+        {
+          Values: [1],
+          Description: "enabled",
         },
       ],
     },
     {
       Bits: [
         {
+          Name: "ADC_EN",
           Position: 7,
+          Default: 0,
         },
       ],
+      Description: "ADC",
       States: [
         {
           Values: [0],
+          Description: "disabled",
+        },
+        {
+          Values: [1],
+          Description: "enabled",
         },
       ],
     },
@@ -103,4 +119,4 @@ const REG_0x0f = {
   Register_Dependencies: null,
 };
 
-export { REG_0x0f };
+export { REG_0x1F };

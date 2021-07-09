@@ -1,7 +1,7 @@
-const REG_0x0f = {
-  Name: "WHO_AM_I",
-  Address: 0x0f,
-  Description: "Device identification register",
+const REG_0x1E = {
+  Name: "CTRL_REG0",
+  Address: 0x1e,
+  Description: "Control register 0",
   BitGroups: [
     {
       Bits: [
@@ -11,7 +11,7 @@ const REG_0x0f = {
       ],
       States: [
         {
-          Values: [1],
+          Values: [0],
         },
       ],
     },
@@ -23,7 +23,7 @@ const REG_0x0f = {
       ],
       States: [
         {
-          Values: [1],
+          Values: [0],
         },
       ],
     },
@@ -71,7 +71,7 @@ const REG_0x0f = {
       ],
       States: [
         {
-          Values: [1],
+          Values: [0],
         },
       ],
     },
@@ -90,12 +90,20 @@ const REG_0x0f = {
     {
       Bits: [
         {
+          Name: "SDO_PU_DISC",
           Position: 7,
+          Default: 0,
         },
       ],
+      Description: "SDO/SA0 pull-up",
       States: [
         {
           Values: [0],
+          Description: "pull-up connected",
+        },
+        {
+          Values: [1],
+          Description: "pull-up disconnected",
         },
       ],
     },
@@ -103,4 +111,4 @@ const REG_0x0f = {
   Register_Dependencies: null,
 };
 
-export { REG_0x0f };
+export { REG_0x1E };
