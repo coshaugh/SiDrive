@@ -106,7 +106,13 @@ const REG_0x23 = {
       ],
     },
     {
-      Name: "BLE",
+      Bits: [
+        {
+          Name: "BLE",
+          Position: 6,
+          Default: 0,
+        },
+      ],
       Description: "Big/little endian data selection.",
       States: [
         {
@@ -120,7 +126,13 @@ const REG_0x23 = {
       ],
     },
     {
-      Name: "BDU",
+      Bits: [
+        {
+          Name: "BDU",
+          Position: 7,
+          Default: 0,
+        },
+      ],
       Description: "Block data update",
       States: [
         {
