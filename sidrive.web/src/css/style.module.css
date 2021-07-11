@@ -1,0 +1,33 @@
+.header {
+  color: black;
+}
+
+.footer {
+  color: rgb(92, 91, 91);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.navigation {
+  color: black;
+  display: inline-block;
+}
+
+.workspace {
+  color: black;
+  width: 100%;
+  /* display: inline-block; */
+  display: flex;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.floatChild {
+  width: 50%;
+  float: left;
+  padding: 20px;
+  overflow: hidden;
+};
