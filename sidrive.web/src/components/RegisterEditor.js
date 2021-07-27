@@ -1,5 +1,9 @@
 import React from "react";
 
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
+import Typography from "@material-ui/core/Typography";
+
 class RegisterEditor extends React.Component {
   constructor(props) {
     super(props);
@@ -12,15 +16,19 @@ class RegisterEditor extends React.Component {
   render() {
     return (
       <div>
-        {/* <Card style={{ width: "18rem" }}>
-          <Card.Body>
-            <Card.Title>Register - {this.state.name}</Card.Title>
-            <Card.Text>Description - {this.state.description}</Card.Text>
-          </Card.Body>
-          <ListGroup className="list-group-flush">
-            <ListGroupItem>Address - {this.state.address}</ListGroupItem>
-          </ListGroup>
-        </Card> */}
+        <Card>
+          <CardContent>
+            <Typography color="textSecondary" gutterBottom>
+              Register - {this.state.register.name}
+            </Typography>
+            <Typography variant="body2" component="p">
+              Description - {this.state.register.description}
+            </Typography>
+            <Typography variant="body2" component="p">
+              Address - {this.state.register.address}
+            </Typography>
+          </CardContent>
+        </Card>
       </div>
     );
   }
