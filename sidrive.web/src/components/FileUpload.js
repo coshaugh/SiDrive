@@ -1,18 +1,17 @@
 import React from "react";
 
-// todo: make this handle multiple files
 class FileUpload extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      selectedFile: null,
+      selectedFiles: [],
     };
   }
 
   onChangeHandler = (event) => {
     this.setState({
-      selectedFile: event.target.files[0],
+      selectedFiles: event.target.files || [],
       loaded: 0,
     });
   };
@@ -21,20 +20,13 @@ class FileUpload extends React.Component {
     event.preventDefault();
 
     const data = new FormData();
-    data.append("file", this.state.selectedFile);
+    this.state.selectedFiles.forEach((file, idx) => {
+      data.append(`file${idx}`, file);
+    });
 
     this.props.fileEndpointRequest(data).then((res) => {
       console.alert(res);
     });
-  };
-
-  getLabel = () => {
-    var baseLabel = "Choose a file to upload.";
-    var detailLabel = !!this.props.getDetailMsg
-      ? " " + this.props.getDetailMsg()
-      : "";
-
-    return `${baseLabel}${detailLabel}`;
   };
 
   render() {
@@ -42,15 +34,15 @@ class FileUpload extends React.Component {
       <div>
         <h3>Upload File</h3>
 
-        <form
-          onChange={this.onChangeHandler}
-          onSubmit={this.uploadFile}
-        >
+        <form onChange={this.onChangeHandler} onSubmit={this.uploadFile}>
           <div className="form-group">
-            <label>{this.getLabel()}</label>
+            <label>Select files</label>
             <br />
-            <input type="file" id="myFile" name="filename" ref={this.fileRef} />
-            <button type="submit" disabled={!this.state.selectedFile}>
+            <input type="file" id="myFile" name="filename" ref={this.fileRef} multiple/>
+            <button
+              type="submit"
+              disabled={this.state.selectedFiles.length === 0}
+            >
               Upload
             </button>
           </div>

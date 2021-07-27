@@ -3,15 +3,33 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom"; // to
 
 import NotFound from "../workspaces/NotFound";
 
-import styles from "../css/style.module.css";
+interface IWorkspaceRouterProps {
+  workspaces: Workspace[];
+}
 
-class WorkspaceRouter extends React.Component {
+export class Workspace {
+  component: React.ComponentType;
+  label: string;
+  url: string;
+ 
+  constructor(
+    component: React.ComponentType,
+    label: string,
+    url: string
+  ) {
+    this.component = component;
+    this.label = label;
+    this.url = url;
+  }
+}
+
+export class WorkspaceRouter extends React.Component<IWorkspaceRouterProps> {
   render() {
     return (
-      <div className={styles.workspace}>
+      <div>
         <Router>
           <Switch>
-            {this.props.routerData.map((workspace, idx) => {
+            {this.props.workspaces.map((workspace: Workspace, idx) => {
               return (
                 <Route
                   exact
@@ -28,5 +46,3 @@ class WorkspaceRouter extends React.Component {
     );
   }
 }
-
-export default WorkspaceRouter;
