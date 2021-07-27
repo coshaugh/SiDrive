@@ -9,11 +9,7 @@ class ChipEditor extends React.Component {
     super(props);
 
     this.state = {
-      name: props.chip.name || null,
-      partNumber: null,
-      manufacturer: null,
-      description: props.chip.descriptions || null,
-      registers: props.chip.registers || [],
+      chip: props.chip,
     };
   }
 
@@ -28,7 +24,7 @@ class ChipEditor extends React.Component {
             <TextField id="chip.description" label="Description" />
           </div>
         </form>
-        {this.state.registers.map((reg, idx) => {
+        {this.state.chip.registers.map((reg, idx) => {
           return <RegisterEditor key={idx} register={reg} />;
         })}
       </div>

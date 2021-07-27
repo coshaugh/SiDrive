@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom"; // to
 
 import NotFound from "../workspaces/NotFound";
 
-interface IWorkspaceRouterProps {
+interface IProps {
   workspaces: Workspace[];
 }
 
@@ -11,19 +11,15 @@ export class Workspace {
   component: React.ComponentType;
   label: string;
   url: string;
- 
-  constructor(
-    component: React.ComponentType,
-    label: string,
-    url: string
-  ) {
+
+  constructor(component: React.ComponentType, label: string, url: string) {
     this.component = component;
     this.label = label;
     this.url = url;
   }
 }
 
-export class WorkspaceRouter extends React.Component<IWorkspaceRouterProps> {
+export class WorkspaceRouter extends React.Component<IProps> {
   render() {
     return (
       <div>

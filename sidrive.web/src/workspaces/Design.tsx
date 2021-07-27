@@ -4,8 +4,13 @@ import FileUpload from "../components/FileUpload";
 import ChipEditor from "../components/ChipEditor";
 // import AceEditor from "react-ace";
 
-function getDummyChip() {
-  const registers = [
+import Chip from "../models/Chip";
+import Register from "../models/Register";
+import IProps from "../interfaces/IProps";
+import IState from "../interfaces/IState";
+
+function getDummyChip(): Chip {
+  let registers: Register[] = [
     {
       name: "reg1",
       address: 0x0f,
@@ -30,13 +35,21 @@ function getDummyChip() {
   ];
 
   return {
-    name: "dummy chip",
-    descriptiong: "dummy description",
+    name: "chip-name - unknown",
+    partNumber: "part-no - unkown",
+    manufacturer: "manufacturer - unknown",
+    description: "description - unknown",
     registers: registers,
   };
 }
 
-class Design extends React.Component {
+interface IDesignProps extends IProps {}
+
+interface IDesignState extends IState {
+  chip: Chip;
+}
+
+class Design extends React.Component<IDesignProps, IDesignState> {
   constructor(props) {
     super(props);
 

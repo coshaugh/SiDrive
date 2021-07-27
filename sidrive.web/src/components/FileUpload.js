@@ -38,7 +38,13 @@ class FileUpload extends React.Component {
           <div className="form-group">
             <label>Select files</label>
             <br />
-            <input type="file" id="myFile" name="filename" ref={this.fileRef} multiple/>
+            <input
+              type="file"
+              id="myFile"
+              name="filename"
+              ref={this.fileRef}
+              multiple
+            />
             <button
               type="submit"
               disabled={this.state.selectedFiles.length === 0}

@@ -1,16 +1,11 @@
 import React from "react";
 
-
 class RegisterEditor extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      name: props.register.name,
-      address: props.register.address,
-      description: props.register.description,
-      bitGroups: props.register.bitGroups || [],
-      registerDependencies: props.register.registerDependencies || [],
+      register: props.register,
     };
   }
 
