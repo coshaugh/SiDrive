@@ -1,8 +1,12 @@
 import React from "react";
 
-import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
-import Typography from "@material-ui/core/Typography";
+import {
+  TextField,
+  Paper,
+  Card,
+  CardContent,
+  Typography,
+} from "@material-ui/core";
 
 class RegisterEditor extends React.Component {
   constructor(props) {
@@ -16,19 +20,34 @@ class RegisterEditor extends React.Component {
   render() {
     return (
       <div>
-        <Card>
-          <CardContent>
-            <Typography color="textSecondary" gutterBottom>
-              Register - {this.state.register.name}
-            </Typography>
-            <Typography variant="body2" component="p">
-              Description - {this.state.register.description}
-            </Typography>
-            <Typography variant="body2" component="p">
-              Address - {this.state.register.address}
-            </Typography>
-          </CardContent>
-        </Card>
+        <Paper elevation={2}>
+          <Card variant="outlined">
+            <CardContent>
+              <div>
+                <TextField
+                  required
+                  id="register.name"
+                  label="Register"
+                  value={this.state.register.name}
+                />
+              </div>
+              <div>
+                <TextField
+                  id="register.description"
+                  label="Description"
+                  value={this.state.register.description}
+                />
+              </div>
+              <div>
+                <TextField
+                  id="register.address"
+                  label="Address"
+                  value={this.state.register.address}
+                ></TextField>
+              </div>
+            </CardContent>
+          </Card>
+        </Paper>
       </div>
     );
   }

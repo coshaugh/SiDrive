@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./components/Header";
-import Navigation from "./components/Navigation";
+
 import { Workspace, WorkspaceRouter } from "./components/WorkspaceRouter";
 import Footer from "./components/Footer";
 
@@ -27,19 +27,19 @@ class App extends React.Component {
   render() {
     return (
       <Grid
-        container
-        direction="row"
-        justifyContent="center"
-        alignItems="center"
+      // container
+      // direction="row"
+      // justifyContent="center"
+      // alignItems="center"
       >
-        <Grid item xs={12}>
-          <Header />
-          <Navigation {...workspaceOptions} />
+        <Grid item className="row">
+        <Header {...workspaceOptions} />
+          
         </Grid>
-        <Grid item xs={12}>
+        <Grid item className="row">
           <WorkspaceRouter {...workspaceOptions} />
         </Grid>
-        <Grid item xs={12}>
+        <Grid item className="row">
           <Footer />
         </Grid>
       </Grid>

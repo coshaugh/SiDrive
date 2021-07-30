@@ -1,5 +1,7 @@
 import React from "react";
 
+import Container from "@material-ui/core/Container";
+
 import FileUpload from "../components/FileUpload";
 import ChipEditor from "../components/ChipEditor";
 // import AceEditor from "react-ace";
@@ -34,11 +36,13 @@ function getDummyChip(): Chip {
     },
   ];
 
+  const unknown = "unkown";
+
   return {
-    name: "chip-name - unknown",
-    partNumber: "part-no - unkown",
-    manufacturer: "manufacturer - unknown",
-    description: "description - unknown",
+    name: unknown,
+    partNumber: unknown,
+    manufacturer: unknown,
+    description: unknown,
     registers: registers,
   };
 }
@@ -61,10 +65,12 @@ class Design extends React.Component<IDesignProps, IDesignState> {
   render() {
     return (
       <div>
-        <FileUpload />
-        <ChipEditor chip={this.state.chip} />
-        {/* TODO-CON: link text in editor to gui */}
-        {/* <AceEditor /> */}
+        <Container fixed>
+          {/* <FileUpload /> */}
+          <ChipEditor chip={this.state.chip} />
+          {/* TODO-CON: link text in editor to gui */}
+          {/* <AceEditor /> */}
+        </Container>
       </div>
     );
   }
