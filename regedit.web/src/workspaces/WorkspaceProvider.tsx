@@ -10,8 +10,9 @@ import NotFound from "./NotFound";
 import { projectName } from "../utility/constants";
 
 const Div = styled.div`
+  position: relative;
   overflow-y: scroll;
-  
+
   margin: 0;
   height: 100%;
   min-height: 100%;

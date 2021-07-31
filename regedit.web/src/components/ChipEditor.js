@@ -1,7 +1,12 @@
 import React from "react";
 import { TextField, Button } from "@material-ui/core";
+import styled from "styled-components";
 
 import RegisterEditor from "./RegisterEditor";
+
+const Div = styled.div`
+  padding-top: 0.5rem;
+`;
 
 class ChipEditor extends React.Component {
   constructor(props) {
@@ -24,60 +29,59 @@ class ChipEditor extends React.Component {
 
   render() {
     return (
-      <div className="row">
-        <div className="col-4">
-          <div>
-            <TextField
-              required
-              id="chip.name"
-              label="Name"
-              value={this.state.chip.name}
-            />
+      <Div>
+        <div className="row">
+          <div className="col-2">
+            <h5>General Info</h5>
+            <div>
+              <TextField
+                required
+                id="chip.name"
+                label="Name"
+                value={this.state.chip.name}
+              />
+            </div>
+            <div>
+              <TextField
+                id="chip.partNumber"
+                label="PartNumber"
+                value={this.state.chip.partNumber}
+              />
+            </div>
+            <div>
+              <TextField
+                id="chip.manufacturer"
+                label="Manufacturer"
+                value={this.state.chip.manufacturer}
+              />
+            </div>
+            <div>
+              <TextField
+                id="chip.description"
+                label="Description"
+                value={this.state.chip.description}
+              />
+            </div>
           </div>
-          <div>
-            <TextField
-              id="chip.partNumber"
-              label="PartNumber"
-              value={this.state.chip.partNumber}
-            />
-          </div>
-          <div>
-            <TextField
-              id="chip.manufacturer"
-              label="Manufacturer"
-              value={this.state.chip.manufacturer}
-            />
-          </div>
-          <div>
-            <TextField
-              id="chip.description"
-              label="Description"
-              value={this.state.chip.description}
-            />
-          </div>
-        </div>
-        <div className="col-8">
-          <div className="row">
-            <div className="col-11">
+          <div className="col-9">
+            <h5>Registers</h5>
+            <div className="row">
               {this.state.chip.registers.map((reg, idx) => {
                 return <RegisterEditor key={idx} register={reg} />;
               })}
             </div>
-            <div className="col-1">
-              <Button
-                variant="outlined"
-                color="primary"
-                onClick={this.addRegister}
-              >
-                Add Register
-              </Button>
-            </div>
+          </div>
+          <div className="col-1">
+            <Button
+              variant="outlined"
+              color="primary"
+              onClick={this.addRegister}
+            >
+              Add Register
+            </Button>
           </div>
         </div>
-        {/* <form noValidate autoComplete="off" className="form-inline">
-          
-        </form> */}
-      </div>
+      </Div>
     );
   }
 }

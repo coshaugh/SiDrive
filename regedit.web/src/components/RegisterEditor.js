@@ -1,5 +1,10 @@
 import React from "react";
 import { TextField, Paper, Card, CardContent } from "@material-ui/core";
+import styled from "styled-components";
+
+const Div = styled.div`
+  display: inline-block;
+`;
 
 class RegisterEditor extends React.Component {
   constructor(props) {
@@ -12,7 +17,7 @@ class RegisterEditor extends React.Component {
 
   render() {
     return (
-      <div>
+      <Div>
         <Paper elevation={2}>
           <Card variant="outlined">
             <CardContent>
@@ -41,7 +46,7 @@ class RegisterEditor extends React.Component {
             </CardContent>
           </Card>
         </Paper>
-      </div>
+      </Div>
     );
   }
 }

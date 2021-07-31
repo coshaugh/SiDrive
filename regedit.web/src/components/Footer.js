@@ -2,11 +2,12 @@ import React from "react";
 import styled from "styled-components";
 
 const Div = styled.div`
-  flex: none;
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 1.5rem;
+  height: 1.75rem;
+  padding-left: .5rem;
+  padding-right: .5rem;
   padding-bottom: 1.5rem;
 `;
 

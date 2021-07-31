@@ -4,7 +4,7 @@ import SettingsBrightnessIcon from "@material-ui/icons/SettingsBrightness";
 import styled from "styled-components";
 
 const Div = styled.div`
-  position: absolute;
+  position: relative;
   width: 100%;
   flex: none;
 `;

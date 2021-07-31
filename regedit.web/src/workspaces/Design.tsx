@@ -35,13 +35,11 @@ function getDummyChip(): Chip {
     },
   ];
 
-  const unknown = "unkown";
-
   return {
-    name: unknown,
-    partNumber: unknown,
-    manufacturer: unknown,
-    description: unknown,
+    name: "",
+    partNumber: "",
+    manufacturer: "",
+    description: "",
     registers: registers,
   };
 }
